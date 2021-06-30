@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow, Tray} = require('electron')
+const {app, BrowserWindow, autoUpdater, Tray} = require('electron')
 const { listenerCount } = require('events')
 const path = require('path')
 
