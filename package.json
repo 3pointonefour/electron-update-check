@@ -24,6 +24,7 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.57",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.57",
     "@electron-forge/maker-zip": "^6.0.0-beta.57",
+    "@electron-forge/publisher-github": "^6.0.0-beta.57",
     "electron": "^13.1.2"
   },
   "dependencies": {
@@ -52,6 +53,17 @@
         {
           "name": "@electron-forge/maker-rpm",
           "config": {}
+        }
+      ],
+      "publishers": [
+        {
+          "name": "subhash kashyap",
+          "config": {
+            "repository": {
+              "owner": "3pointonefour",
+              "name": "electron-update-check"
+            }
+          }
         }
       ]
     }
