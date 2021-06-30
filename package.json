@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/3pointpnefour/electron-quick-start",
+  "repository": "https://github.com/3pointpnefour/electron-update-check",
   "keywords": [
     "Electron",
     "quick",
@@ -18,8 +18,5 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^13.1.2"
-  },
-  "dependencies": {
-    "update-electron-app": "^2.0.1"
   }
 }

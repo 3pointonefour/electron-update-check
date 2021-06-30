@@ -1,6 +1,13 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, Tray} = require('electron')
+const { listenerCount } = require('events')
 const path = require('path')
+
+require('update-electron-app')({
+  updateInterval:"5m"
+})
+//const activeWindow = require('active-win');
+//const activeWindow = require('./index.js');
 
 function createWindow () {
   // Create the browser window.
@@ -22,15 +29,29 @@ function createWindow () {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
+let tray = null
+
 app.whenReady().then(() => {
-  createWindow()
-  
+  /* createWindow()
+
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  }) */
+  tray = new Tray('butterfly.png')
+  tray.setToolTip('I\'m Synth\'n Bitches!.')
+  tray.on("click", ()=>{
+    createWindow()
   })
+
+  
+
 })
+
+
+
+
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
